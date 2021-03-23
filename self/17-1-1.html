@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:OpenNewWindow();">Open New Window</a>
+    <a href="javascript:CloseNewWindow();">Close New Window</a>
+
+
+    <script>
+        var myWin = null;
+        function OpenNewWindow() {
+            myWin = window.open(
+                "https://www.iii.org.tw/", "open new window : III forum", "height=500px,width=600px"
+            );
+        }
+
+        function CloseNewWindow() {
+            myWin.close();
+
+            if (myWin.closed) {
+                alert('closed new window!');
+            }
+        }
+    </script>
+</body>
+
+</html>

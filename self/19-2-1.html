@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="codeArea"></pre>
+
+    <script>
+        var req = new XMLHttpRequest();
+        req.open('get', 'https://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch');
+
+        req.onloadstart = function(){
+            console.log('Start connecting');
+        }
+
+        req.onload = function(){
+            console.log('connecting');
+            document.getElementById("codeArea").innerHTML = JSON.stringify(JSON.parse(this.responseText)
+            )
+        }
+
+        req.onload = function(){
+            console.log('stop connecting')
+        }
+        req.send();
+    </script>
+</body>
+
+</html>
